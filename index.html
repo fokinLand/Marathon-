@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Марафон: Шлях до Ородруїну</title>
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #f4e4bc;
+        font-family: "Georgia", serif;
+        text-align: center;
+        padding: 50px;
+      }
+      h1 {
+        color: #d4af37;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+      .button {
+        background-color: #8b4513;
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        border: 2px solid #d4af37;
+      }
+      .button:hover { background-color: #a0522d; }
+    </style>
+  </head>
+  <body>
+    <h1>Братство Персня</h1>
+    <p>Твій шлях починається тут. Приєднайся до марафону через Strava, щоб ми могли рахувати твої кроки та милі.</p>
+    <br /><br />
+    <a id="stravaBtn" href="#" class="button">УВІЙТИ ЧЕРЕЗ STRAVA</a>
+
+    <script>
+      const CLIENT_ID = '165907';
+      const REDIRECT_URI = window.location.origin + '/auth/callback';
+      const authUrl =
+        `https://www.strava.com/oauth/authorize?` +
+        `client_id=${CLIENT_ID}&` +
+        `response_type=code&` +
+        `redirect_uri=${encodeURIComponent(REDIRECT_URI)}&` +
+        `approval_prompt=force&` +
+        `scope=read,activity:read_all`;
+      document.getElementById('stravaBtn').href = authUrl;
+    </script>
+  </body>
+</html>
