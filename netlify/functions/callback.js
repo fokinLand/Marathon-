@@ -3,6 +3,7 @@ const https = require('https');
 const CLIENT_ID     = '165907';
 const CLIENT_SECRET = 'b461d8a3b3fa5fe99465578ad15b0d7e05490ea3';
 const WEB_APP_URL   = 'https://script.google.com/macros/s/AKfycbwM3Ebx9Wjh40EeALc2HKWOAvaTm8C9vgE2g9htWX1K31DtcZFm_MIjIKzXWhgfhv07/exec';
+const REDIRECT_URI = 'https://dynamic-flan-0537fc.netlify.app/auth/callback';
 
 // Простий POST запит через https (без зовнішніх залежностей)
 function post(url, data) {
